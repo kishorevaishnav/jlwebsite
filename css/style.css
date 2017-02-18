@@ -318,7 +318,11 @@ b {
 /*   Background Images for demos
 /*------------------------------------------*/
 .bg-img {
-    background: url("../images/bg-1.jpg") no-repeat center center scroll;
+    /*background: url("../images/bg-1.jpg") no-repeat center center scroll;*/
+    /*background: url("../images/stock-photo-close-up-hand-wrench-and-metal-nuts-on-reflected-glass-background-307745213.jpg") no-repeat center center scroll;*/
+    /*background: url("../images/stock-photo-building-and-measuring-tools-175644863.jpg") no-repeat center center scroll;*/
+    background: url("../images/depositphotos_35269821-stock-photo-discussing-project.jpg") no-repeat center center scroll;
+    background: url("https://image.shutterstock.com/z/stock-photo-the-old-iron-railway-locomotive-wheels-39358426.jpg") no-repeat center center scroll;
     -webkit-background-size: cover;
     -moz-background-size:cover;
     background-size: cover;  
