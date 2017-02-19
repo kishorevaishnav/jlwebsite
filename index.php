@@ -68,7 +68,7 @@
     <!-- =========================
             HEADER 
         ============================== -->
-        <header id="nav2-3">
+        <header id="nav2-3" style="position:fixed;width:100%;z-index:100">
             
             <nav class="navbar" id="main-navbar">
             <!-- navbar fixed on top: -->
@@ -145,11 +145,11 @@
         </header><!-- =========================
              HERO SECTION
         ============================== -->
-        <section id="hero1-1" class="hero bg-img">
+        <section id="hero1-1" class="hero bg-img" >
             <!-- <div class="overlay"></div>                         -->
             
-            <div class="container vertical-center-rel">
-                <div class="row">
+            <div class="container vertical-center-rel" >
+                <div class="row" >
                     <div class="overlay"></div>
                     <div class="col-md-7">
                         <h1 class="text-white p-t-md">We make something extraordinary</h1>
