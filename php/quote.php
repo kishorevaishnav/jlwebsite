@@ -26,10 +26,7 @@ if( isset($name) && isset($email) && isset($phone) && isset($message) && is_emai
 
 	// HTML Elements for Email Body
 	$body = <<<EOD
-	<strong>Name:</strong> $name <br>
-	<strong>Email:</strong> <a href="mailto:$email?subject=feedback" "email me">$email</a> <br> <br>
-	<strong>Phone:</strong> $phone <br>
-	<strong>Message:</strong> $message <br>
+	<strong>Name:</strong> $name <br><strong>Email:</strong> <a href="mailto:$email?subject=feedback" "email me">$email</a> <br> <br><strong>Phone:</strong> $phone <br><strong>Message:</strong> $message <br>
 EOD;
 //Must end on first column
 	
@@ -40,8 +37,8 @@ EOD;
 	// PHP email sender
 	// mail($to, $subject, $body, $headers);
 
-	system("curl -s --user '".$_ENV['MG_APIKEY']."' ".$_ENV['MG_APIURL']." -F from='".$email."' -F to='".$_ENV['MG_TO']."' -F subject='".$subject."' -F text='".$body."'");
-	error_log("curl -s --user '".$_ENV['MG_APIKEY']."' ".$_ENV['MG_APIURL']." -F from='".$email."' -F to='".$_ENV['MG_TO']."' -F subject='".$subject."' -F text='".$body."'");
+	system("curl -s --user 'api:".$_ENV['MG_APIKEY']."' ".$_ENV['MG_APIURL']." -F from='".$email."' -F to='".$_ENV['MG_TO']."' -F subject='".$subject."' -F text='".$body."'");
+	error_log("curl -s --user 'api:".$_ENV['MG_APIKEY']."' ".$_ENV['MG_APIURL']." -F from='".$email."' -F to='".$_ENV['MG_TO']."' -F subject='".$subject."' -F text='".$body."'");
 
 }
 
