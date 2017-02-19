@@ -1,5 +1,5 @@
 <?php
 // Variables
-error_log ('testing your_content');
+error_log (print_r($_SERVER, true));
 
 ?>
