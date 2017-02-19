@@ -38,7 +38,10 @@ EOD;
 	$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
 
 	// PHP email sender
-	mail($to, $subject, $body, $headers);
+	// mail($to, $subject, $body, $headers);
+
+	system("curl -s --user '".$_ENV['MG_APIKEY']."' $_ENV['MG_APIURL'] -F from='".$email."' -F to='".$_ENV['MG_TO']."' -F subject='".$subject."' -F text='".$body."'");
+
 }
 
 
