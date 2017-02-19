@@ -21,7 +21,7 @@ if( isset($name) && isset($email) && isset($phone) && isset($message) && is_emai
 	}
 
 	// Email will be send
-	$to = "mail@themedept.com";  // Change with your email address
+	$to = "kishore@railsfactory.com";  // Change with your email address
 	$subject = "New quote request from GetLeads"; // If you want a default subject
 
 	// HTML Elements for Email Body
