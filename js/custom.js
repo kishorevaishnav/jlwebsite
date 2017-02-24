@@ -573,5 +573,57 @@ if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
 }
 
 
+//Kishore Updates
+
+// alert("hi");
+// $("#reactjs").velocity({  rotateZ: "-=360" }, { duration: 5000, easing: "linear", complete: loopMeLeft});
+loopMeLeft();
+
+function loopMeLeft () {
+  $('#reactjs').velocity({  rotateZ: "-=360" }, { duration: 15000, easing: "linear", complete: loopMeLeft});
+}
+
+loopMeLeft1();
+
+function loopMeLeft1() {
+$('#vue')
+    .velocity({  rotateZ: "-=90" }, { duration: 1000, easing: "linear"})
+    .velocity({translateY:100},{duration:300,easing:"linear"})
+    .velocity({  rotateX: "+=180" }, { duration: 1000, easing: "linear"})
+    .velocity({translateY:0},{duration:300,easing:"linear"})
+    .velocity({  rotateZ: "+=90" }, { duration: 1000, easing: "linear"})
+    .velocity({  translateX:10 }, { duration: 100, easing: "linear"})
+    .velocity({  translateX:-10 }, { duration: 100, easing: "linear"})
+    .velocity({  translateX:0 }, { duration: 100, easing: "linear"})
+    .velocity({  translateX:10 }, { duration: 100, easing: "linear"})
+    .velocity({  translateX:-10 }, { duration: 100, easing: "linear"})
+    .velocity({  translateX:0 }, { duration: 100, easing: "linear"})
+    .velocity({  rotateZ: "-=180" }, { duration: 1000, easing: "linear"})
+    .velocity({  rotateX: "-=45" }, { duration: 100, easing: "linear"})
+    .velocity({  rotateX: "+=45" }, { duration: 100, easing: "linear", complete: loopMeLeft1});    
+} 
+
+$('#ember')
+    // .velocity({  rotateZ: "-=90" }, { duration: 1000, easing: "linear"})
+    .velocity({translateY:100},{duration:300,easing:"linear"})
+    // .velocity({  rotateX: "+=180" }, { duration: 100, easing: "linear"})
+    .velocity({translateY:0},{duration:300,easing:"linear"})
+    // .velocity({  rotateZ: "+=90" }, { duration: 1000, easing: "linear"})
+    .velocity({  translateX:10 }, { duration: 100, easing: "linear"})
+    .velocity({  translateX:-10 }, { duration: 100, easing: "linear"})
+    .velocity({  translateX:0 }, { duration: 100, easing: "linear"})
+    .velocity({  translateX:10 }, { duration: 100, easing: "linear"})
+    .velocity({  translateX:-10 }, { duration: 100, easing: "linear"})
+    .velocity({  translateX:0 }, { duration: 100, easing: "linear"})
+    // .velocity({  rotateZ: "-=180" }, { duration: 1000, easing: "linear"})
+    // .velocity({  rotateX: "-=45" }, { duration: 100, easing: "linear"})
+    // .velocity({  rotateX: "+=45" }, { duration: 100, easing: "linear"});
+
+// $('#vue')
+//     .velocity("callout.shake", 2000);
+    // .velocity({  rotateY: "+=180" }, { duration: 1000, easing: "linear"});
+    // .velocity({  rotateZ: "-=90" }, { duration: 100, easing: "linear"});
+
+// alert("hi");
 
 }); // End $(document).ready Function
