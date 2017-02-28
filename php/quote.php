@@ -38,7 +38,7 @@ EOD;
 
 	system("curl -s --user 'api:".$_ENV['JL_MG_APIKEY']."' ".$_ENV['JL_MG_APIURL']."/messages -F from='".$email."' -F to='".$_ENV['JL_MG_TO']."' -F subject='".$subject."' --form-string html='".$body."'");
 	error_log("curl -s --user 'api:".$_ENV['JL_MG_APIKEY']."' ".$_ENV['JL_MG_APIURL']."/messages -F from='".$email."' -F to='".$_ENV['JL_MG_TO']."' -F subject='".$subject."' --form-string html='".$body."'");
-	system("curl -X POST -H 'Content-type: application/json' --data '{\"text\":\" $subject  --> New Lead Mail from JSL. \`\`\` $body \`\`\` \"}' ".$_ENV['JL_SLACK_WH']);
-	error_log("curl -X POST -H 'Content-type: application/json' --data '{\"text\":\" $subject  --> New Lead Mail from JSL. \"}' ".$_ENV['JL_SLACK_WH']);
+	system("curl -X POST -H 'Content-type: application/json' --data '{\"text\":\" JSL: ``` $body ``` \"}' ".$_ENV['JL_SLACK_WH']);
+	error_log("curl -X POST -H 'Content-type: application/json' --data '{\"text\":\" JSL: ``` $body ``` \"}' ".$_ENV['JL_SLACK_WH']);
 }
 ?>
