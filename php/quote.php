@@ -28,16 +28,16 @@ if( isset($name) && isset($email) && isset($phone) && isset($message) && is_emai
 EOD;
 //Must end on first column
 	
-	$headers = "From: $name <$email>\r\n";
-	$headers .= 'MIME-Version: 1.0' . "\r\n";
-	$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+	// $headers = "From: $name <$email>\r\n";
+	// $headers .= 'MIME-Version: 1.0' . "\r\n";
+	// $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
 
 	// PHP email sender
 	// mail($to, $subject, $body, $headers);
 
-	system("curl -s --user 'api:".$_ENV['MG_APIKEY']."' ".$_ENV['MG_APIURL']." -F from='".$email."' -F to='".$_ENV['MG_TO']."' -F subject='".$subject."' -F text='".$body."'");
-	error_log("curl -s --user 'api:".$_ENV['MG_APIKEY']."' ".$_ENV['MG_APIURL']." -F from='".$email."' -F to='".$_ENV['MG_TO']."' -F subject='".$subject."' -F text='".$body."'");
-	system("curl -X POST -H 'Content-type: application/json' --data '{\"text\":\" $subject  --> New Lead Mail from JSL. \"}' ".$_ENV['SLACK_WH']);
+	system("curl -s --user 'api:".$_ENV['MG_APIKEY']."' ".$_ENV['MG_APIURL']." -F from='".$email."' -F to='".$_ENV['MG_TO']."' -F subject='".$subject."' -F text='".$body."' -F html='<-'");
+	error_log("curl -s --user 'api:".$_ENV['MG_APIKEY']."' ".$_ENV['MG_APIURL']." -F from='".$email."' -F to='".$_ENV['MG_TO']."' -F subject='".$subject."' -F text='".$body."' -F html='<-'");
+	system("curl -X POST -H 'Content-type: application/json' --data '{\"text\":\" $subject  --> New Lead Mail from JSL. ```$body ``` \"}' ".$_ENV['SLACK_WH']);
 	error_log("curl -X POST -H 'Content-type: application/json' --data '{\"text\":\" $subject  --> New Lead Mail from JSL. \"}' ".$_ENV['SLACK_WH']);
 }
 ?>
