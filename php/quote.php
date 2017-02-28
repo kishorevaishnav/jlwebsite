@@ -27,6 +27,8 @@ if( isset($name) && isset($email) && isset($phone) && isset($message) && is_emai
 	$body = <<<EOD
 	<strong>Name:</strong> $name <br><strong>Email:</strong> <a href="mailto:$email?subject=feedback">$email</a> <br> <br><strong>Phone:</strong> $phone <br><strong>Message:</strong> $message <br>
 EOD;
+	$slack_body = "From *https://javascriptlabs.com*\nName: *$name*\nEmail: *$email*\nPhone: *phone*\nMessage: *message*";
+
 //Must end on first column
 	
 	// $headers = "From: $name <$email>\r\n";
@@ -37,8 +39,8 @@ EOD;
 	// mail($to, $subject, $body, $headers);
 
 	system("curl -s --user 'api:".$_ENV['JL_MG_APIKEY']."' ".$_ENV['JL_MG_APIURL']."/messages -F from='".$email."' -F to='".$_ENV['JL_MG_TO']."' -F subject='".$subject."' --form-string html='".$body."'");
-	error_log("curl -s --user 'api:".$_ENV['JL_MG_APIKEY']."' ".$_ENV['JL_MG_APIURL']."/messages -F from='".$email."' -F to='".$_ENV['JL_MG_TO']."' -F subject='".$subject."' --form-string html='".$body."'");
-	system("curl -X POST -H 'Content-type: application/json' --data '{\"text\":\" JSL: ``` $body ``` \"}' ".$_ENV['JL_SLACK_WH']);
-	error_log("curl -X POST -H 'Content-type: application/json' --data '{\"text\":\" JSL: ``` $body ``` \"}' ".$_ENV['JL_SLACK_WH']);
+	// error_log("curl -s --user 'api:".$_ENV['JL_MG_APIKEY']."' ".$_ENV['JL_MG_APIURL']."/messages -F from='".$email."' -F to='".$_ENV['JL_MG_TO']."' -F subject='".$subject."' --form-string html='".$body."'");
+	system("curl -X POST -H 'Content-type: application/json' --data '{\"text\":\" $slack_body \"}' ".$_ENV['JL_SLACK_WH']);
+	// error_log("curl -X POST -H 'Content-type: application/json' --data '{\"text\":\"$slack_body\"}' ".$_ENV['JL_SLACK_WH']);
 }
 ?>
