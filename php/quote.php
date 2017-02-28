@@ -36,9 +36,9 @@ EOD;
 	// PHP email sender
 	// mail($to, $subject, $body, $headers);
 
-	system("curl -s --user 'api:".$_ENV['MG_APIKEY']."' ".$_ENV['MG_APIURL']." -F from='".$email."' -F to='".$_ENV['MG_TO']."' -F subject='".$subject."' -F text='".$body."' -F html='<-'");
-	error_log("curl -s --user 'api:".$_ENV['MG_APIKEY']."' ".$_ENV['MG_APIURL']." -F from='".$email."' -F to='".$_ENV['MG_TO']."' -F subject='".$subject."' -F text='".$body."' -F html='<-'");
-	system("curl -X POST -H 'Content-type: application/json' --data '{\"text\":\" $subject  --> New Lead Mail from JSL. \`\`\` $body \`\`\` \"}' ".$_ENV['SLACK_WH']);
-	error_log("curl -X POST -H 'Content-type: application/json' --data '{\"text\":\" $subject  --> New Lead Mail from JSL. \"}' ".$_ENV['SLACK_WH']);
+	system("curl -s --user 'api:".$_ENV['JL_MG_APIKEY']."' ".$_ENV['JL_MG_APIURL']." -F from='".$email."' -F to='".$_ENV['JL_MG_TO']."' -F subject='".$subject."' -F text='".$body."' -F html='<-'");
+	error_log("curl -s --user 'api:".$_ENV['JL_MG_APIKEY']."' ".$_ENV['JL_MG_APIURL']." -F from='".$email."' -F to='".$_ENV['JL_MG_TO']."' -F subject='".$subject."' -F text='".$body."' -F html='<-'");
+	system("curl -X POST -H 'Content-type: application/json' --data '{\"text\":\" $subject  --> New Lead Mail from JSL. \`\`\` $body \`\`\` \"}' ".$_ENV['JL_SLACK_WH']);
+	error_log("curl -X POST -H 'Content-type: application/json' --data '{\"text\":\" $subject  --> New Lead Mail from JSL. \"}' ".$_ENV['JL_SLACK_WH']);
 }
 ?>
