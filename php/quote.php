@@ -40,7 +40,7 @@ EOD;
 
 	system("curl -s --user 'api:".$_ENV['JL_MG_APIKEY']."' ".$_ENV['JL_MG_APIURL']."/messages -F from='".$email."' -F to='".$_ENV['JL_MG_TO']."' -F subject='".$subject."' --form-string html='".$body."'");
 	// error_log("curl -s --user 'api:".$_ENV['JL_MG_APIKEY']."' ".$_ENV['JL_MG_APIURL']."/messages -F from='".$email."' -F to='".$_ENV['JL_MG_TO']."' -F subject='".$subject."' --form-string html='".$body."'");
-	system("curl -X POST -H 'Content-type: application/json' --data '"attachments": [
+	system("curl -X POST -H 'Content-type: application/json' --data '{\"attachments\": [
         {
             \"title\": \"From *https://javascriptlabs.com*\",
             \"pretext\": \"\",
