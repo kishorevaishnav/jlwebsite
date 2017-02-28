@@ -27,7 +27,7 @@ if( isset($name) && isset($email) && isset($phone) && isset($message) && is_emai
 	$body = <<<EOD
 	<strong>Name:</strong> $name <br><strong>Email:</strong> <a href="mailto:$email?subject=feedback">$email</a> <br> <br><strong>Phone:</strong> $phone <br><strong>Message:</strong> $message <br>
 EOD;
-	$slack_body = "From *https://javascriptlabs.com*\nName: *$name*\nEmail: *$email*\nPhone: *$phone*\nMessage: *$message*";
+	$slack_body = "From *https://javascriptlabs.com*\nName: *$name*\nEmail: $email\nPhone: *$phone*\nMessage: *$message*";
 
 //Must end on first column
 	
