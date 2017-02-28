@@ -25,7 +25,7 @@ if( isset($name) && isset($email) && isset($phone) && isset($message) && is_emai
 
 	// HTML Elements for Email Body
 	$body = <<<EOD
-	<strong>Name:</strong> $name <br><strong>Email:</strong> <a href="mailto:$email?subject=feedback" "email me">$email</a> <br> <br><strong>Phone:</strong> $phone <br><strong>Message:</strong> $message <br>
+	<strong>Name:</strong> $name <br><strong>Email:</strong> <a href="mailto:$email?subject=feedback>$email</a> <br> <br><strong>Phone:</strong> $phone <br><strong>Message:</strong> $message <br>
 EOD;
 //Must end on first column
 	
