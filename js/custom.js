@@ -129,20 +129,20 @@ $('.video-play').vide("images/video/video", {
 /* ===========================================================
    MAGNIFIC POPUP
 ============================================================== */
-$('.mp-singleimg').magnificPopup({
-    type: 'image'
-});
+// $('.mp-singleimg').magnificPopup({
+//     type: 'image'
+// });
 
 // $('.mp-gallery').magnificPopup({
 //     type: 'image',
 //     gallery:{enabled:true},
 // });
 
-$('.mp-iframe').magnificPopup({
-    type: 'iframe'
-});
+// $('.mp-iframe').magnificPopup({
+//     type: 'iframe'
+// });
 
-$('.mp-gallery').magnificPopup({
+$('.simple-ajax-popup-align-top').magnificPopup({
     type: 'ajax',
     alignTop: true,
     overflowY: 'scroll' // as we know that popup content is tall we set scroll overflow by default to avoid jump
