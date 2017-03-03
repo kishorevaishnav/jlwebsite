@@ -4548,3 +4548,10 @@ input.toggle-round-flat:checked + label:after {
     margin-right: 2px;
 }
 
+
+/* Kishore  */
+#features16-1 {
+  -vendor-animation-duration: 3s;
+  -vendor-animation-delay: 2s;
+  -vendor-animation-iteration-count: infinite;
+}

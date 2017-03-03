@@ -639,3 +639,12 @@ if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
 // // alert("hi");
 
 }); // End $(document).ready Function
+
+$.fn.extend({
+    animateCss: function (animationName) {
+        var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+        this.addClass('animated ' + animationName).one(animationEnd, function() {
+            $(this).removeClass('animated ' + animationName);
+        });
+    }
+});
