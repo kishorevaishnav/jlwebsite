@@ -129,18 +129,32 @@ $('.video-play').vide("images/video/video", {
 /* ===========================================================
    MAGNIFIC POPUP
 ============================================================== */
+<<<<<<< HEAD
+/*
+$('.mp-singleimg').magnificPopup({
+    type: 'image'
+});
+=======
 // $('.mp-singleimg').magnificPopup({
 //     type: 'image'
 // });
+>>>>>>> 43ef2695b6416487a333d6eafa8b8c27a244dc1f
 
 // $('.mp-gallery').magnificPopup({
 //     type: 'image',
 //     gallery:{enabled:true},
 // });
 
+<<<<<<< HEAD
+$('.mp-iframe').magnificPopup({
+    type: 'iframe'
+});
+*/
+=======
 // $('.mp-iframe').magnificPopup({
 //     type: 'iframe'
 // });
+>>>>>>> 43ef2695b6416487a333d6eafa8b8c27a244dc1f
 
 $('.simple-ajax-popup-align-top').magnificPopup({
     type: 'ajax',
